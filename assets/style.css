@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+
+* {
+    background-color: #1a2b33;
+    box-sizing: border-box;
+    color: #F2F5EA;
+    font-family: 'Luckiest Guy', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Title */
+h1 {
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.title {
+    color: #f0b238;
+}
+
+/* Icons */
+.commands {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 310px;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+}
+
+.cross {
+    background: url('icons/x.svg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: block;
+    height: 1em;
+    margin-right: 5px;
+    width: 1em;
+}
+
+.circle {
+    background: url('icons/circle.svg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: block;
+    height: 1em;
+    width: 1em;
+}
+
+.turn {
+    align-items: center;
+    background-color: #1E3640;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(13, 34, 43, 0.5);
+    display: flex;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.cross-turn {
+    background: url('icons/x.svg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: block;
+    height: 1em;
+    width: 1em;
+}
+
+.circl-turn {
+    background: url('icons/circle.svg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: block;
+    height: 1em;
+    width: 1em;
+}
+
+.btn-reset {
+    background: url('icons/reset.svg') no-repeat;
+    background-color: lightgray;
+    background-position: center;
+    background-size: 20px;
+    border: none;
+    border-radius: 20%;
+    box-shadow: 2px 2px 2px rgba(13, 34, 43, 0.5);
+    height: 35px;
+    padding: 15px;
+    width: 35px;
+}
+
+.btn-reset:focus,
+.btn-reset:hover {
+    background-color: white;
+}
+
+.btn-reset:active {
+    transform: scale(.90);
+    background-color: #47525D;
+}
+
+
+/* Game board */
+
+.wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game {
+    border: 1px solid #1a2b33;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+}
+
+.square {
+    background-color: #1E3640;
+    border: 1px solid #1a2b33;
+    border-radius: 20%;
+    box-shadow: 2px 2px 2px rgba(13, 34, 43, 0.8);
+    height: 100px;
+    width: 100px;
+}
+
+.square:hover {
+    background-color: #5a6672;
+}
