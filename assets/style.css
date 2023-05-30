@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
+:root {
+    --primary-color: #4ab7b8;
+    --secondary-color: #f0b238;
+    --bg-color: #1a2b33;
+    --square-color: #1E3640;
+    --square-color-light: #5a6672;
+    --shadow: rgba(13, 34, 43, 0.5);
+}
 
 * {
-    background-color: #1a2b33;
+    background-color: var(--bg-color);
     box-sizing: border-box;
     color: #F2F5EA;
     font-family: 'Luckiest Guy', cursive;
@@ -11,7 +19,7 @@
 }
 
 
-/* Title */
+/* Titre */
 h1 {
     letter-spacing: 2px;
     margin-bottom: 50px;
@@ -19,10 +27,10 @@ h1 {
 }
 
 .title {
-    color: #f0b238;
+    color: var(--secondary-color);
 }
 
-/* Commands */
+/* Commandes */
 .commands {
     align-items: center;
     display: flex;
@@ -59,9 +67,9 @@ h1 {
 
 .turn {
     align-items: center;
-    background-color: #1E3640;
+    background-color: var(--square-color);
     border-radius: 5px;
-    box-shadow: 2px 2px 2px rgba(13, 34, 43, 0.5);
+    box-shadow: 2px 2px 2px var(--shadow);
     display: flex;
     font-family: sans-serif;
     font-size: 12px;
@@ -80,7 +88,7 @@ h1 {
     width: 1em;
 }
 
-.circl-turn {
+.circle-turn {
     background: url('icons/circle.svg') no-repeat;
     background-position: center;
     background-size: cover;
@@ -96,7 +104,7 @@ h1 {
     background-size: 20px;
     border: none;
     border-radius: 20%;
-    box-shadow: 2px 2px 2px rgba(13, 34, 43, 0.5);
+    box-shadow: 2px 2px 2px var(--shadow);
     height: 35px;
     padding: 15px;
     width: 35px;
@@ -113,7 +121,7 @@ h1 {
 }
 
 
-/* Game board */
+/* Grille de jeu */
 .wrapper {
     align-items: center;
     display: flex;
@@ -122,7 +130,7 @@ h1 {
 }
 
 .game {
-    border: 1px solid #1a2b33;
+    border: 1px solid var(--bg-color);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 5px;
@@ -130,8 +138,8 @@ h1 {
 
 .square {
     align-items: center;
-    background-color: #1E3640;
-    border: 1px solid #1a2b33;
+    background-color: var(--square-color);
+    border: 1px solid var(--bg-color);
     border-radius: 20%;
     box-shadow: 2px 2px 2px rgba(13, 34, 43, 0.8);
     display: flex;
@@ -141,15 +149,20 @@ h1 {
 }
 
 .square:hover {
-    background-color: #5a6672;
+    background-color: var(--square-color-light);
+}
+
+.square:hover .circle,
+.square:hover .cross {
+    background-color: var(--square-color-light);
 }
 
 
-/* Game Components */
+/* Composants du jeu */
 
 .circle {
-    border: 15px solid #f0b238;
-    background-color: #1E3640;
+    border: 15px solid var(--secondary-color);
+    background-color: var(--square-color);
     border-radius: 50%;
     height: 70px;
     width: 70px;
@@ -160,5 +173,53 @@ h1 {
 }
 
 .cross {
-    border: 7px solid #4ab7b8;
+    position: relative;
+    background-color: var(--square-color);
+    height: 70px;
+    width: 70px;
+    transform: rotate(45deg);
+}
+
+.cross:hover {
+    background-color: var(--square-color-light);
+}
+
+.cross:before,
+.cross:after {
+    content: "";
+    position: absolute;
+    background-color: var(--primary-color);
+}
+
+.cross:before {
+    height: 100%;
+    left: 50%;
+    margin-left: -15%;
+    width: 30%;
+}
+
+.cross:after {
+    height: 30%;
+    margin-top: -15%;
+    top: 50%;
+    width: 100%;
+}
+
+/* Infos (victoire) */
+
+.info {
+    align-items: center;
+    display: flex;
+    font-size: 25px;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.winner-cross {
+    color: var(--primary-color);
+}
+
+.winner-circle {
+    color: var(--secondary-color);
 }
