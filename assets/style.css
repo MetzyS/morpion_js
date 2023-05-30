@@ -22,7 +22,7 @@ h1 {
     color: #f0b238;
 }
 
-/* Icons */
+/* Commands */
 .commands {
     align-items: center;
     display: flex;
@@ -38,7 +38,7 @@ h1 {
     flex-direction: row;
 }
 
-.cross {
+.cross-icon {
     background: url('icons/x.svg') no-repeat;
     background-position: center;
     background-size: cover;
@@ -48,7 +48,7 @@ h1 {
     width: 1em;
 }
 
-.circle {
+.circle-icon {
     background: url('icons/circle.svg') no-repeat;
     background-position: center;
     background-size: cover;
@@ -114,7 +114,6 @@ h1 {
 
 
 /* Game board */
-
 .wrapper {
     align-items: center;
     display: flex;
@@ -130,14 +129,36 @@ h1 {
 }
 
 .square {
+    align-items: center;
     background-color: #1E3640;
     border: 1px solid #1a2b33;
     border-radius: 20%;
     box-shadow: 2px 2px 2px rgba(13, 34, 43, 0.8);
+    display: flex;
     height: 100px;
+    justify-content: center;
     width: 100px;
 }
 
 .square:hover {
     background-color: #5a6672;
+}
+
+
+/* Game Components */
+
+.circle {
+    border: 15px solid #f0b238;
+    background-color: #1E3640;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+}
+
+.circle:hover {
+    background-color: #47525D;
+}
+
+.cross {
+    border: 7px solid #4ab7b8;
 }
