@@ -1,6 +1,7 @@
 let game = document.querySelector('#game');
 let turn = document.querySelector('#turn-icon');
 let info = document.querySelector('#info');
+let reset = document.querySelector('#btn-reset');
 
 const startCells = [
     "", "", "", "", "", "", "", "", ""
@@ -78,3 +79,12 @@ function checkScore() {
     })
 
 }
+
+reset.addEventListener('click', e => {
+    game.innerHTML = '';
+    info.innerHTML = '';
+    play = "cross";
+    turn.classList.remove('circle-turn');
+    turn.classList.add('cross-turn');
+    createBoard();
+});
